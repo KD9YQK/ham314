@@ -154,7 +154,7 @@ Terminal=false
 StartupNotify=false
 Type=Application
 StartupWMClass=vara.exe
-Categories=Utility;" > "${APPDIR}"/VARA/varahf.desktop
+Categories=HamRadio;" > "${APPDIR}"/VARA/varahf.desktop
 
 echo "[Desktop Entry]
 Name=VARA FM
@@ -166,7 +166,7 @@ Terminal=false
 StartupNotify=false
 Type=Application
 StartupWMClass=varafm.exe
-Categories=Utility;" > "${APPDIR}"/VARA/varafm.desktop
+Categories=HamRadio;" > "${APPDIR}"/VARA/varafm.desktop
 
 echo "[Desktop Entry]
 Name=VaraAC
@@ -178,4 +178,4 @@ Terminal=false
 StartupNotify=false
 Type=Application
 StartupWMClass=varaac.exe
-Categories=Utility;" > "${APPDIR}"/VARA/varaac.desktop
+Categories=HamRadio;" > "${APPDIR}"/VARA/varaac.desktop
