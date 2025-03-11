@@ -44,10 +44,10 @@ mkdir uronode
 cd uronode
 wget https://downloads.sourceforge.net/project/uronode/uronode-2.15.tar.gz
 tar xzvf uronode-2.15.tar.gz
-wget http://deb.debian.org/debian/pool/main/u/uronode/uronode_2.15-3.debian.tar.xz
+wget http://deb.debian.org/debian/pool/main/u/uronode/uronode_2.15-5.debian.tar.xz
 cp uronode-2.15.tar.gz uronode_2.15.orig.tar.gz
 cd uronode-2.15
-tar xJvf ../uronode_2.15-3.debian.tar.xz
+tar xJvf ../uronode_2.15-5.debian.tar.xz
 NUMCPUS=`lscpu | grep CPU\(s\): | awk '{print $2}'`
 echo -e "Compiling on $NUMCPUS CPUs concurrently\n"
 debuild -us -uc -j$NUMCPUS
