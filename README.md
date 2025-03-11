@@ -1,5 +1,5 @@
 # KD9YQK Ham314
-## Auto build scripts for Ham Radio Apps on Raspberry Pi OS Bookworm 64bit
+## Auto build scripts for Ham Radio Apps on Raspberry Pi OS Bookworm 32bit ONLY
 Intended to be used on a fresh OS install with GUI. 
 
 Installs the following
@@ -22,3 +22,8 @@ Installs the following
 12. Chirp - Not working WIP
 13. Grid Tracker - Download
 14. Adds missing Ham Radio menu
+15. ardop
+16. VaraHF and VaraFM
+17. QtTermTCP
+18. QtSoundModem
+19. linbpq
