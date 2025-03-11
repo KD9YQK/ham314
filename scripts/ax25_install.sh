@@ -1,12 +1,12 @@
 echo "Install AX.25 Packet Node"
 sleep 1
 sudo apt install gpsd libgps28 -y
-sudo dpkg -i ../deb/direwolf*.deb
-sudo dpkg -i ../deb/libax25_1*.deb
-sudo dpkg -i ../deb/libax25-dev*.deb
-sudo dpkg -i ../deb/ax25apps*.deb
-sudo dpkg -i ../deb/ax25tools*.deb
-sudo dpkg -i ../deb/uronode_*.deb
+#sudo dpkg -i ../deb/direwolf*.deb
+#sudo dpkg -i ../deb/libax25_1*.deb
+#sudo dpkg -i ../deb/libax25-dev*.deb
+#sudo dpkg -i ../deb/ax25apps*.deb
+#sudo dpkg -i ../deb/ax25tools*.deb
+#sudo dpkg -i ../deb/uronode_*.deb
 #sudo apt-get install ax25-tools ax25-apps telnet ax25-node -y
 #sudo apt install uronode openbsd-inetd tcpd -y
 sudo apt install telnet openbsd-inetd tcpd -y
