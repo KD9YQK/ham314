@@ -1,4 +1,4 @@
-sudo CP apps/ardop/ardopc /usr/local/bin/
+sudo cp ../apps/ardop/ardopc /usr/local/bin/
 sudo chmod +x /usr/local/bin/ardopc
 
 # Find the correct sound card identifier (See video tutorial and John Wiseman's comments)
