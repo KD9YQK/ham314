@@ -1,7 +1,27 @@
 X!/bin/bash
 
-cd ~/ham314/deb
-sudo dpkg -i box64-rpi4arm64*.deb -y
+# check if .list file already exists
+if [ -f /etc/apt/sources.list.d/box86.list ]; then
+  sudo rm -f /etc/apt/sources.list.d/box86.list || exit 1
+fi
+# check if .sources file already exists
+if [ -f /etc/apt/sources.list.d/box86.sources ]; then
+  sudo rm -f /etc/apt/sources.list.d/box86.sources || exit 1
+fi
+# download gpg key from specified url
+if [ -f /usr/share/keyrings/box86-archive-keyring.gpg ]; then
+  sudo rm -f /usr/share/keyrings/box86-archive-keyring.gpg
+fi
+sudo mkdir -p /usr/share/keyrings
+wget -qO- "https://pi-apps-coders.github.io/box86-debs/KEY.gpg" | sudo gpg --dearmor -o /usr/share/keyrings/box86-archive-keyring.gpg
+# create .sources file
+echo "Types: deb
+URIs: https://Pi-Apps-Coders.github.io/box86-debs/debian
+Suites: ./
+Signed-By: /usr/share/keyrings/box86-archive-keyring.gpg" | sudo tee /etc/apt/sources.list.d/box86.sources >/dev/null
+
+sudo apt update
+sudo apt install box86-rpi4arm64 -y
 cd ~/ham314/temp
 
 version=9.17
@@ -168,14 +188,14 @@ Type=Application
 StartupWMClass=varafm.exe
 Categories=HamRadio;" > "${APPDIR}"/VARA/varafm.desktop
 
-echo "[Desktop Entry]
-Name=VaraAC
-GenericName=VaraAC
-Comment=VarAC is cool.
-Exec=env WINEPREFIX=\"${PREFIXDIR}\" WINEDEBUG=-all wine \"${PREFIXDIR}/drive_c/VaraAC/VaraAC.exe\"
-Icon=$(dirname "$0")/icon-64.png
-Terminal=false
-StartupNotify=false
-Type=Application
-StartupWMClass=varaac.exe
-Categories=HamRadio;" > "${APPDIR}"/VARA/varaac.desktop
+#echo "[Desktop Entry]
+#Name=VaraAC
+#GenericName=VaraAC
+#Comment=VarAC is cool.
+#Exec=env WINEPREFIX=\"${PREFIXDIR}\" WINEDEBUG=-all wine \"${PREFIXDIR}/drive_c/VaraAC/VaraAC.exe\"
+#Icon=$(dirname "$0")/icon-64.png
+#Terminal=false
+#StartupNotify=false
+#Type=Application
+#StartupWMClass=varaac.exe
+#Categories=HamRadio;" > "${APPDIR}"/VARA/varaac.desktop
