@@ -158,7 +158,8 @@ Categories=System;" | sudo tee /usr/share/applications/wine-regenerate.desktop >
 
 
 # TODO download premade drive
-
+wget "https://kd9yqk.com/downloads/vara_install.zip"
+unzip vara_install.zip ~/
 
 APPDIR="${HOME}"/.local/share/applications
 PREFIXDIR="${HOME}"/.wine
