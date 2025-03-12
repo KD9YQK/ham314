@@ -170,7 +170,7 @@ Name=VARA HF
 GenericName=VARA HF
 Comment=VARA HF is a shareware ham radio OFDM software modem for RMS Express and other messaging clients.
 Exec=env WINEPREFIX=\"${PREFIXDIR}\" WINEDEBUG=-all wine \"${PREFIXDIR}/drive_c/VARA/VARA.exe\"
-Icon=$(dirname "$0")/icon-64.png
+#Icon=$(dirname "$0")/icon-64.png
 Terminal=false
 StartupNotify=false
 Type=Application
@@ -182,7 +182,7 @@ Name=VARA FM
 GenericName=VARA FM
 Comment=VARA FM is a shareware ham radio OFDM software modem for RMS Express and other messaging clients.
 Exec=env WINEPREFIX=\"${PREFIXDIR}\" WINEDEBUG=-all wine \"${PREFIXDIR}/drive_c/VARAFM/VARAFM.exe\"
-Icon=$(dirname "$0")/icon-64.png
+#Icon=$(dirname "$0")/icon-64.png
 Terminal=false
 StartupNotify=false
 Type=Application
