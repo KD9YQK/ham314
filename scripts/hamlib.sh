@@ -10,6 +10,6 @@ cd hamlib-4.6.2
 make -j 4
 make check
 sudo apt install checkinstall
-#sudo make install
-sudo checkinstall
+sudo make install
+#sudo checkinstall
 sudo ldconfig
