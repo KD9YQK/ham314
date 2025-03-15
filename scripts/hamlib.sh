@@ -9,9 +9,15 @@ cd hamlib-4.6.2
 ./configure --disable-shared --prefix="/usr/local" --without-cxx-binding \
     --disable-winradio CFLAGS="-fdata-sections -ffunction-sections" \
     LDFLAGS="-Wl,--gc-sections" LIBUSB_LIBS="/usr/lib/arm-linux-gnueabihf/libusb-1.0.a"
+echo "Configure complete, Make in 5 seconds"
+sleep 5
 make -j 4
+echo "Make complete, Check in 5 seconds"
+sleep 5
 make check
-sudo apt install checkinstall
+echo "Check complete, Install in 5 seconds"
+sleep 5
 sudo make install
+#sudo apt install checkinstall
 #sudo checkinstall
 sudo ldconfig
