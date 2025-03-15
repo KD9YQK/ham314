@@ -1,0 +1,65 @@
+conky.config = {
+	background = true,
+	use_xft = true,
+	font = '123:size=8',
+	xftalpha = 1.0,
+	update_interval = 1.0,
+	total_run_times = 0,
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_transparent = false,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+        out_to_wayland = true,
+        out_to_x = false,
+--	double_buffer = true,
+	minimum_width = 260, minimum_height = 5,
+	maximum_width = 260,
+	draw_shades = true,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	default_color = 'LightBlue',
+	default_shade_color = 'black',
+	default_outline_color = 'white',
+	alignment = 'top_right',
+	gap_x = 95,
+	gap_y = 70,
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	net_avg_samples = 1,
+	override_utf8_locale = true,
+	use_spacer = 'right',
+        border_width = 0,
+        lua_load = 'lua/radio.lua',
+        lua_mouse_hook = 'mouse_handler',
+        color1 = 'White',
+        color2 = 'LightBlue',
+        color3 = 'Red',
+        color4 = 'Green',
+        font1 = 'Arial:size=12',
+        font2 = 'Arial:bold:size=14',
+        font3 = 'Arial:bold:size=16',
+
+};
+
+conky.text = [[
+${font3}${color2}${alignc}RADIO
+${font2}${color2}RADIO TOOLS ${color2}${hr 2}
+
+${font1}${if_running ardopc}${color4}ARDOP ${alignr}ACTIVE${else}${color3}ARDOP ${alignr}OFF$endif
+${if_running rigctld}${color4}RIGCTL ${alignr}ACTIVE${else}${color3}RIGCTL ${alignr}OFF$endif
+${if_running kissattach}${color4}KISSATCH ${alignr}ACTIVE${else}${color3}KISSATCH ${alignr}OFF$endif
+${if_running direwolf}${color4}DIREWOLF ${alignr}ACTIVE${else}${color3}DIREWOLF ${alignr}OFF$endif
+${if_running flrig}${color4}FLRIG ${alignr}ACTIVE${else}${color3}FLRIG ${alignr}OFF$endif
+${if_running VARA.exe}${color4}VARA-HF ${alignr}ACTIVE${else}${color3}VARA-HF ${alignr}OFF$endif
+${if_running VARAFM.exe}${color4}VARA-FM ${alignr}ACTIVE${else}${color3}VARA-FM ${alignr}OFF$endif
+
+${font2}${color2}DIGITAL APPS ${color2}${hr 2}
+
+${font1}${if_running js8call}${color4}JS8 ${alignr}ACTIVE${else}${color3}JS8 ${alignr}OFF$endif
+${if_running wsjtx}${color4}WSJTX ${alignr}ACTIVE${else}${color3}WSJTX ${alignr}OFF$endif
+${if_running fldigi}${color4}FLDIGI ${alignr}ACTIVE${else}${color3}FLDIGI ${alignr}OFF$endif
+${if_running pat}${color4}PAT ${alignr}ACTIVE${else}${color3}PAT ${alignr}OFF$endif
+${if_running VarAC.exe}${color4}VARAC ${alignr}ACTIVE${else}${color3}VARAC ${alignr}OFF$endif
+]];
