@@ -6,7 +6,7 @@ sudo apt-get install -y libjpeg62-turbo-dev
 wget https://github.com/Hamlib/Hamlib/releases/download/4.6.2/hamlib-4.6.2.tar.gz
 tar -zxvf hamlib-4.6.2.tar.gz
 cd hamlib-4.6.2
-./configure --prefix=/usr/local --enable-static
+./configure --prefix=/usr/local --enable-static LIBUSB_LIBS="/usr/lib/arm-linux-gnueabihf/libusb-1.0.a"
 make -j 4
 make check
 sudo apt install checkinstall
