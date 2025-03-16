@@ -1,4 +1,4 @@
-X!/bin/bash
+#!/bin/bash
 
 # check if .list file already exists
 if [ -f /etc/apt/sources.list.d/box86.list ]; then
@@ -158,8 +158,9 @@ Categories=System;" | sudo tee /usr/share/applications/wine-regenerate.desktop >
 
 
 # TODO download premade drive
-wget "https://kd9yqk.com/downloads/vara_install.zip"
-unzip vara_install.zip ~/
+cd ~
+wget "https://kd9yqk.com/downloads/vara_wine.zip"
+unzip vara_wine.zip
 
 APPDIR="${HOME}"/.local/share/applications
 PREFIXDIR="${HOME}"/.wine
