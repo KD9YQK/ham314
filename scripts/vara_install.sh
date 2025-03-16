@@ -26,7 +26,7 @@ cd ~/ham314/temp
 
 version=9.17
 # Download wine to /opt
-wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/wine-${version}.tar.gz -O wine-${version}.tar.gz
+wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/wine-i386-${version}.tar.gz -O wine-${version}.tar.gz
 sudo tar -xvf wine-${version}.tar.gz -C /opt
 rm -f wine-${version}.tar.gz
 
@@ -49,26 +49,32 @@ rm -f "wine-mono-9.3.0-x86.tar.xz"
 #download Gecko to universal location (to be installed automatically in all wine prefixes)
 #according to https://wiki.winehq.org/Gecko, use Gecko 2.47.4 for Wine 8.6
 sudo mkdir -p /opt/wine-${version}/share/wine/gecko
-wget -O "wine-gecko-2.47.4-x86_64.tar.xz" 'https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86_64.tar.xz'
-sudo tar -xvf "wine-gecko-2.47.4-x86_64.tar.xz" -C "/opt/wine-${version}/share/wine/gecko"
-rm -f "wine-gecko-2.47.4-x86_64.tar.xz"
+wget -O "wine-gecko-2.47.4-x86.tar.xz" 'https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86.tar.xz'
+sudo tar -xvf "wine-gecko-2.47.4-x86.tar.xz" -C "/opt/wine-${version}/share/wine/gecko"
+rm -f "wine-gecko-2.47.4-x86.tar.xz"
 
-status "Creating terminal commands:"
+echo "Creating terminal commands:"
 echo "  - winecfg"
 sudo ln -s /opt/wine-${version}/bin/winecfg /usr/local/bin/winecfg
 echo "  - wineserver"
 sudo ln -s /opt/wine-${version}/bin/wineserver /usr/local/bin/wineserver
 echo "  - wineboot"
 sudo ln -s /opt/wine-${version}/bin/wineboot /usr/local/bin/wineboot
+
 echo "  - wine"
-sudo ln -s /opt/wine-${version}/bin/wine /usr/local/bin/wine
+echo "#!/bin/bash
+if [ -d /opt/wine-${version}/mesa ];then
+  export LD_LIBRARY_PATH=/opt/wine-${version}/mesa/lib/arm-linux-gnueabihf/
+  export LIBGL_DRIVERS_PATH=/opt/wine-${version}/mesa/lib/arm-linux-gnueabihf/dri/
+  export VK_ICD_FILENAMES=/opt/wine-${version}/mesa/share/vulkan/icd.d/broadcom_icd.armv7l.json
+fi
+/opt/wine-${version}/bin/wine"' "$@"' | sudo tee /usr/local/bin/wine >/dev/null
 
 echo "  - winetricks"
 echo "#!/bin/bash
-BOX64_NOBANNER=1 /opt/wine-${version}/bin/winetricks"' "$@"' | sudo tee /usr/local/bin/winetricks >/dev/null
+BOX86_NOBANNER=1 /opt/wine-${version}/bin/winetricks"' "$@"' | sudo tee /usr/local/bin/winetricks >/dev/null
 
 #make them all executable
-status -n "Making executable... "
 sudo chmod +x /usr/local/bin/winecfg /usr/local/bin/wineserver /usr/local/bin/wineboot /usr/local/bin/wine /usr/local/bin/winetricks
 
 #get icons from wine-stuff repo
