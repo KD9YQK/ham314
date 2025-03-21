@@ -4,6 +4,6 @@ function conky_mouse_handler (event)
     if (event.type ~= "button_up") then
         return false
     end
-    os.execute('bash ~/ham314/launchers/settings/settings_loc.sh')
+    os.execute('bash /home/kd9yqk/ham314/launchers/settings/settings_loc.sh')
     return false
 end
