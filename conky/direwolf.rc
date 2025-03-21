@@ -34,7 +34,7 @@ conky.config = {
         draw_graph_borders = true,
         top_name_width = 120,
         top_name_verbose = true,
-        lua_load = '~/.config/conky/lua/direwolf.lua',
+        lua_load = 'lua/direwolf.lua',
         lua_mouse_hook = 'mouse_handler',
 };
 
