@@ -58,7 +58,7 @@ function os.capture(cmd, raw)
 end
 
 function conky_log_parse(log, maxlen)
-    local t = os.capture('tail -n 10 ' .. log, true)
+    local t = os.capture('tail -n ' .. maxlen .. ' ' .. log, true)
     local c = 0
     for line in t:gmatch("([^\n]*)\n?") do c = c + 1 end
     for _ = c+1, maxlen do t = t .. '\n' end
