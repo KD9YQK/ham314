@@ -44,6 +44,6 @@ conky.text = [[
 
 ${font Arial:size=14}${color2}${alignc}PAT EMAIL
 ${font Arial:bold:size=12}${color2}Log ${color2} ${hr 2}
-${font Arial:bold:size=10}${color1}${lua conky_log_parse /tmp/pat.log 17}
+${font Arial:bold:size=10}${color1}${lua conky_log_parse /tmp/pat.log 20}
 
 ]];
