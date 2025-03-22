@@ -42,6 +42,6 @@ conky.text = [[
 
 ${font Arial:size=14}${color LightBlue}${alignc}DIREWOLF
 ${font Arial:bold:size=12}${color LightBlue}Log ${color DarkSlateGray} ${hr 2}
-${font Arial:bold:size=10}${color White}${lua conky_log_parse /tmp/direwolf.log 17}
+${font Arial:bold:size=10}${color White}${lua conky_log_parse /tmp/direwolf.log 20}
 
 ]];
