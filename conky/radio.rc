@@ -61,5 +61,5 @@ ${font1}${if_running js8call}${color4}JS8 ${alignr}ACTIVE${else}${color3}JS8 ${a
 ${if_running wsjtx}${color4}WSJTX ${alignr}ACTIVE${else}${color3}WSJTX ${alignr}OFF$endif
 ${if_running fldigi}${color4}FLDIGI ${alignr}ACTIVE${else}${color3}FLDIGI ${alignr}OFF$endif
 ${if_running pat}${color4}PAT ${alignr}ACTIVE${else}${color3}PAT ${alignr}OFF$endif
-${if_running VarAC.exe}${color4}VARAC ${alignr}ACTIVE${else}${color3}VARAC ${alignr}OFF$endif
+${if_running pavucontrol}${color4}Pulse ${alignr}ACTIVE${else}${color3}pavucontrol ${alignr}OFF$endif
 ]];
