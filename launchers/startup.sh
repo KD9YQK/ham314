@@ -15,5 +15,5 @@ echo 'Unknown\nNoFix\nNoFix' > /tmp/loc.dat
 while true
 do
     sleep 30
-    python3 gps.py > /tmp/loc.dat
+    python3 /home/kd9yqk/ham314/launchers/gps.py > /tmp/loc.dat
 done
