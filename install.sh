@@ -30,5 +30,9 @@ fi
 #  bash "$f"
 #done
 
+echo "Changing to dark mode"
+sudo echo "GTK_THEME=Adwaita-dark" >> /etc/environment
+
+echo "Insalling Ham Menu"
 sudo apt install extra-xdg-menus -y
 echo 'Install Complete :)'
