@@ -44,8 +44,8 @@ ${font Arial:size=24}${color2}${alignc}KD9YQK
 #${voffset -25}
 ${hr 2}
 #${font Arial:bold:size=12}${color1}Gridsquare ${alignr}${color Yellow}${execi 60 cat /run/user/1000/gridinfo.txt | cut -c1-8}
-${font Arial:bold:size=12}${color2}Gridsquare ${alignr}${color1}${execpi 2 awk NR==1 ~/loc.dat}
-${font Arial:bold:size=12}${color2}Lat: ${alignr}${color1}${execpi 2 awk NR==2 ~/loc.dat}
-${font Arial:bold:size=12}${color2}Lon: ${alignr}${color1}${execpi 2 awk NR==3 ~/loc.dat}
+${font Arial:bold:size=12}${color2}Gridsquare ${alignr}${color1}${execpi 2 awk NR==1 /tmp/loc.dat}
+${font Arial:bold:size=12}${color2}Lat: ${alignr}${color1}${execpi 2 awk NR==2 /tmp/loc.dat}
+${font Arial:bold:size=12}${color2}Lon: ${alignr}${color1}${execpi 2 awk NR==3 /tmp/loc.dat}
 
 ]];

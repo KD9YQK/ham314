@@ -1,0 +1,15 @@
+[Unit]
+Description=Ham314 Startup
+
+[Service]
+ExecStart=bash /home/kd9yqk/ham314/launchers/startup.sh
+WorkingDirectory=/home/kd9yqk/ham314/launchers/
+StandardOutput=inherit
+StandardError=inherit
+Restart=no
+User=kd9yqk
+TimeoutStopSec=3
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
