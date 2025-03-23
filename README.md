@@ -4,7 +4,7 @@ Intended to be used on a fresh OS install with GUI.
 
 Installs the following
 1. Hamlib - Prebuilt deb
-2. WSJT-X - Repo
+2. WSJT-X - Web
 3. JS8Call - Repo
 4. PCSI - Git WIP - Needs menu item
 5. TQSL - Build WIP
@@ -27,3 +27,4 @@ Installs the following
 17. QtTermTCP
 18. QtSoundModem
 19. linbpq
+20. conky
