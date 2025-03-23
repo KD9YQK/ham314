@@ -3,7 +3,7 @@ conky.config = {
 	use_xft = true,
 	font = '123:size=8',
 	xftalpha = 1.0,
-	update_interval = 1.0,
+	update_interval = 2.0,
 	total_run_times = 0,
 	own_window = true,
 	own_window_type = 'normal',
@@ -16,7 +16,7 @@ conky.config = {
 	maximum_width = 260,
 	draw_shades = true,
 	draw_outline = false,
-	draw_borders = false,
+	draw_borders = true,
 	draw_graph_borders = false,
 	default_color = 'LightBlue',
 	default_shade_color = 'black',
@@ -46,20 +46,53 @@ conky.config = {
 conky.text = [[
 ${font3}${color2}${alignc}RADIO
 ${font2}${color2}RADIO TOOLS ${color2}${hr 2}
-
-${font1}${if_running ardopc}${color4}ARDOP ${alignr}ACTIVE${else}${color3}ARDOP ${alignr}OFF$endif
-${if_running rigctld}${color4}RIGCTL ${alignr}ACTIVE${else}${color3}RIGCTL ${alignr}OFF$endif
-${if_running kissattach}${color4}KISSATCH ${alignr}ACTIVE${else}${color3}KISSATCH ${alignr}OFF$endif
-${if_running direwolf}${color4}DIREWOLF ${alignr}ACTIVE${else}${color3}DIREWOLF ${alignr}OFF$endif
-${if_running flrig}${color4}FLRIG ${alignr}ACTIVE${else}${color3}FLRIG ${alignr}OFF$endif
-${if_running VARA.exe}${color4}VARA-HF ${alignr}ACTIVE${else}${color3}VARA-HF ${alignr}OFF$endif
-${if_running VARAFM.exe}${color4}VARA-FM ${alignr}ACTIVE${else}${color3}VARA-FM ${alignr}OFF$endif
+${offset 32}${voffset 14}${font1}${color1}ARDOP${offset 92}rigctld
+${offset 32}${voffset 21}${font1}${color1}Direwolf${offset 80}kissattach
+${offset 32}${voffset 21}${font1}${color1}Vara HF${offset 80}Vara FM
+${offset 42}${voffset 21}${font1}${color1}FLRig${offset 68}SoundModem
 
 ${font2}${color2}DIGITAL APPS ${color2}${hr 2}
+${offset 34}${voffset 14}${font1}${color1}JS8Call${offset 84}WSJTX
+${offset 38}${voffset 21}${font1}${color1}FLDigi${offset 100}PAT
+${offset 42}${voffset 21}${font1}${color1}Pulse${offset 100}Xastir
 
-${font1}${if_running js8call}${color4}JS8 ${alignr}ACTIVE${else}${color3}JS8 ${alignr}OFF$endif
-${if_running wsjtx}${color4}WSJTX ${alignr}ACTIVE${else}${color3}WSJTX ${alignr}OFF$endif
-${if_running fldigi}${color4}FLDIGI ${alignr}ACTIVE${else}${color3}FLDIGI ${alignr}OFF$endif
-${if_running pat}${color4}PAT ${alignr}ACTIVE${else}${color3}PAT ${alignr}OFF$endif
-${if_running pavucontrol}${color4}Pulse ${alignr}ACTIVE${else}${color3}Pulse ${alignr}OFF$endif
+${if_running ardopc}${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 0,60}${else}${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 0,60}$endif
+${if_running rigctld}${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 140,60}${else}${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 140,60}$endif
+${if_running direwolf}${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 0,100}${else}${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 0,100}$endif
+${if_running kissattach}${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 140,100}${else}${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 140,100}$endif
+${if_running VARA.exe}${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 0,140}${else}${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 0,140}$endif
+${if_running VARAFM.exe}${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 140,140}${else}${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 140,140}$endif
+${if_running flrig}${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 0,180}${else}${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 0,180}$endif
+${if_running QtSoundModem}${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 140,180}${else}${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 140,180}$endif
+
+${if_running js8call}
+${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 0,254}
+${else}
+${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 0,254}
+$endif
+${if_running wsjtx}
+${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 140,254}
+${else}
+${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 140,254}
+$endif
+${if_running fldigi}
+${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 0,294}
+${else}
+${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 0,294}
+$endif
+${if_running pat}
+${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 140,294}
+${else}
+${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 140,294}
+$endif
+${if_running pavucontrol}
+${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 0,334}
+${else}
+${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 0,334}
+$endif
+${if_running xastir}
+${image /home/kd9yqk/ham314/conky/img/green_btn.png -s 128x32 -p 140,334}
+${else}
+${image /home/kd9yqk/ham314/conky/img/red_btn.png -s 128x32 -p 140,334}
+$endif
 ]];
