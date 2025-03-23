@@ -16,7 +16,7 @@ try:
 	print(str(t[0])[:7])
 	print(str(t[1])[:8])
 except:
-	exit()
 	print('ERROR')
 	print('No Fix')
 	print('No Fix')
+	exit()
