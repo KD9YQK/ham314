@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ConkyStartup
+GenericName=ConkyStartup
+Comment=Start conky on boot
+Exec=bash /home/kd9yqk/ham314/conky/conky-start.sh
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true

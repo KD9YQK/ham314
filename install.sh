@@ -35,4 +35,8 @@ sudo echo "GTK_THEME=Adwaita-dark" >> /etc/environment
 
 echo "Insalling Ham Menu"
 sudo apt install extra-xdg-menus -y
+
+sudo cp ~/ham314/icons/start-here.png /usr/share/icons/PiXflat/32x32/places
+mkdir ~/.config/autostart
+cp ~/ham314/icons/conky-start.desktop ~/.config/autostart
 echo 'Install Complete :)'
